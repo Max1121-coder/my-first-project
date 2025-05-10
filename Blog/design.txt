@@ -1,0 +1,78 @@
+1. Frontend (React)
+The frontend is the part of the application that the user interacts with directly. In this case, it will display the list of tasks, handle user inputs, and make requests to the backend to perform CRUD (Create, Read, Update, Delete) operations.
+
+Key Requirements for the Frontend:
+- User Interface (UI) Layout:
+  - To-Do List: Display the list of tasks, showing each task's name and its completion status.
+  - Buttons and Inputs:
+    - A button to add a new task.
+    - A checkbox for each task to mark it as complete or incomplete.
+    - A button to delete a task from the list.
+  - Task Details: For each task, the name should be visible, along with a checkbox for completion and a delete button.
+- State Management: 
+  - Use React’s state (useState) to store and update the task data (task list, task completion, etc.).
+  - Use useEffect to fetch tasks from the backend when the app loads and to update the list of tasks after CRUD operations.
+- UI/UX Enhancements: 
+  - Responsive Design: The app should look good on mobile, tablet, and desktop.
+  - Form Validation: The task name should not be empty when adding a new task.
+  - Loading Indicator: Display a loading spinner when tasks are being fetched from the backend.
+  - Error Handling: Show a user-friendly message if there is an error.
+- HTTP Requests: 
+  - Use Axios (or fetch) to send HTTP requests to the backend API (e.g., GET for fetching tasks, POST for adding tasks, PUT for marking tasks as complete, DELETE for removing tasks).
+
+2. Backend (Node.js & Express)
+The backend handles the business logic, manages the database, and serves the frontend with data. It exposes API routes that the frontend will interact with.
+
+Key Requirements for the Backend:
+- Node.js and Express Setup:
+  - Install Node.js and set up Express.js as the server framework.
+  - Set up basic routes to handle HTTP requests such as adding, fetching, updating, and deleting tasks.
+- API Endpoints:
+  - GET /tasks: Fetch the list of all tasks.
+  - POST /tasks: Add a new task to the database.
+  - PUT /tasks/:id: Update a specific task (mark it as completed).
+  - DELETE /tasks/:id: Delete a task from the database.
+- Task Model (MongoDB): 
+  - Create a Task model using Mongoose with fields: `name`, `completed`, `createdAt`, `updatedAt`.
+- Environment Setup: 
+  - Use Dotenv to manage environment variables (e.g., MongoDB URI).
+
+3. Database (MongoDB)
+MongoDB is a NoSQL database where the data is stored in flexible, JSON-like documents.
+
+Key Requirements for the Database:
+- Data Model: 
+  - Store each task as a document with the fields: `name`, `completed`, `createdAt`, `updatedAt`.
+  - Use Mongoose to define the schema and interact with the database.
+- Data Operations: 
+  - Create tasks: When the user adds a task, store it in the `tasks` collection.
+  - Retrieve tasks: Fetch the list of tasks when requested by the frontend.
+  - Update tasks: Mark tasks as completed or incomplete.
+  - Delete tasks: Remove a task from the database.
+- Database Hosting: 
+  - Use MongoDB Atlas (cloud-based MongoDB service) to host the database.
+
+4. Deployment
+After building the app locally, you’ll need to deploy both the backend and frontend to the web.
+
+Key Requirements for Deployment:
+- Backend Deployment: 
+  - Use Heroku or Vercel to deploy the Node.js backend.
+- Frontend Deployment: 
+  - Deploy the React frontend to platforms like Netlify or Vercel.
+- Database Hosting: 
+  - Use MongoDB Atlas to host your cloud database.
+
+5. Additional Features (Optional)
+Once the basic app is up and running, you can add more advanced features to enhance its functionality:
+- User Authentication: 
+  - Add authentication using JWT tokens or Passport.js.
+- Task Priorities: 
+  - Add functionality to assign a priority level to tasks (e.g., High, Medium, Low).
+- Due Dates: 
+  - Allow users to set a due date for each task.
+- Search and Filters: 
+  - Allow users to search tasks by name or filter tasks based on completion status.
+- Categories: 
+  - Allow users to categorize tasks (e.g., Work, Personal).
+"""
