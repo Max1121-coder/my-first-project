@@ -1,5 +1,3 @@
-// app.js - Express app setup
-
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
